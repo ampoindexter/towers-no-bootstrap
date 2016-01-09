@@ -13,9 +13,7 @@ var numMoves = 0;
 
 function diskSelect() {
   event.stopPropagation();
-  console.log('nthDisk', $(this).find('.disk:nth-of-type(1)'));
   $selectedDisk = $(this).first().parent().find('.disk:nth-of-type(1)').toggleClass('selected');
-  console.log('$selectedDisk', $selectedDisk);
 }
 
 function moveDisk() {
