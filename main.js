@@ -22,13 +22,13 @@ function moveDisk() {
     $selectedDisk.removeClass('selected');
     $selectedDisk = "";
     numMoves++;
+    if ($('#tower3').children('.disk').length === 3) {
+      win();
+    } else if (numMoves > 12) {
+      alert('Too many moves. Please try again.')
+    }
   } else {
     alert('Invalid move.')
-  }
-  if ($('#tower3').children('.disk').length === 3) {
-    win();
-  } else if (numMoves > 12) {
-    alert('Too many moves. Please try again.')
   }
 }
 
