@@ -22,14 +22,9 @@ function moveDisk() {
     $selectedDisk.removeClass('selected');
     $selectedDisk = "";
     numMoves++;
-    console.log(numMoves);
+    checkWin();
   } else {
     alert('Invalid move.')
-  }
-  if ($('#tower3').children('.disk').length === 3) {
-    win();
-  } else if (numMoves > 12) {
-    alert('Too many moves. Please try again.')
   }
 }
 
@@ -37,6 +32,10 @@ function resetGame() {
   location.reload();
 }
 
-function win() {
-  alert('YOU FUCKING ROCK!');
+function checkWin() {
+  if ($('#tower3').children('.disk').length === 3) {
+    alert('YOU FUCKING ROCK!');
+  } else if (numMoves > 12) {
+    alert('Too many moves. Please try again.');
+  }
 }
